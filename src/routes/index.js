@@ -16,6 +16,11 @@ const routes = {
   // Keep in mind, routes are evaluated in order
   children: [
     {
+      // TODO: Move this to root path at least for prod
+      path: '/landing',
+      load: () => import(/* webpackChunkName: 'landing' */ './landing'),
+    },
+    {
       path: '',
       load: () => import(/* webpackChunkName: 'home' */ './home'),
     },
