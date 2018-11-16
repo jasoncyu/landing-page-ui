@@ -1,0 +1,37 @@
+
+:root {
+  --es-blue: rgb(50, 191, 219);
+  --bg: rgb(247, 247, 247);
+  --dark-bg: rgb(239, 239, 239);
+  --industry: rgb(147, 229, 164);
+  --keyword: rgb(145, 229, 227);
+  --employee-size: rgb(248, 209, 179);
+  --job-title: rgb(250, 176, 208);
+}
+
+.h1 {
+  color: var(--es-blue);
+  margin: auto;
+}
+
+.googleAd {
+  margin: auto;
+  border: 2px solid rgb(195, 195, 195);
+  background: white;
+}
+
+.demandDashboard {
+  background: var(--bg);
+}
+
+.darkRow {
+  background: var(--dark-bg);
+}
+
+.propertiesRow {
+
+}
+
+.property {
+
+}
