@@ -2,6 +2,7 @@ import React from 'react';
 import { Header, Grid, Card } from 'semantic-ui-react';
 import withStyles from 'isomorphic-style-loader/lib/withStyles';
 import s from './Landing.css'
+import GoogleAd from './GoogleAd'
 
 
 class Landing extends React.Component {
@@ -56,6 +57,7 @@ class Landing extends React.Component {
             You and {this.props.supplyCompanies.length} other companies
             are running google ads that look like this
           </Header>
+          <GoogleAd />
         </Grid.Row>
         <Grid.Row>
           <Header as="h1" className={s.h1}>
