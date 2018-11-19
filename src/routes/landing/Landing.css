@@ -1,3 +1,63 @@
+@font-face {
+  font-family: "Proxima Nova";
+  src: url("/fonts/proxima-nova/ProximaNova-Thin.eot");
+  src: url("/fonts/proxima-nova/ProximaNova-Thin.eot?#iefix") format("embedded-opentype"), url("/fonts/proxima-nova/ProximaNova-Thin.woff") format("woff"), url("/fonts/proxima-nova/ProximaNova-Thin.ttf") format("truetype"), url("/fonts/proxima-nova/ProximaNova-Thin.svg#Proxima Nova") format("svg");
+  font-weight: 100;
+  font-style: normal; }
+
+@media screen and (-webkit-min-device-pixel-ratio: 0) {
+  @font-face {
+    font-family: "Proxima Nova";
+    src: url("/fonts/proxima-nova/ProximaNova-Thin.svg#Proxima Nova") format("svg"); } }
+
+@font-face {
+  font-family: "Proxima Nova";
+  src: url("/fonts/proxima-nova/ProximaNova-Light.eot");
+  src: url("/fonts/proxima-nova/ProximaNova-Light.eot?#iefix") format("embedded-opentype"), url("/fonts/proxima-nova/ProximaNova-Light.woff") format("woff"), url("/fonts/proxima-nova/ProximaNova-Light.ttf") format("truetype"), url("/fonts/proxima-nova/ProximaNova-Light.svg#Proxima Nova") format("svg");
+  font-weight: 200;
+  font-style: normal; }
+
+@media screen and (-webkit-min-device-pixel-ratio: 0) {
+  @font-face {
+    font-family: "Proxima Nova";
+    src: url("/fonts/proxima-nova/ProximaNova-Light.svg#Proxima Nova") format("svg"); } }
+
+@font-face {
+  font-family: "Proxima Nova";
+  src: url("/fonts/proxima-nova/ProximaNova-Regular.eot");
+  src: url("/fonts/proxima-nova/ProximaNova-Regular.eot?#iefix") format("embedded-opentype"), url("/fonts/proxima-nova/ProximaNova-Regular.woff") format("woff"), url("/fonts/proxima-nova/ProximaNova-Regular.ttf") format("truetype"), url("/fonts/proxima-nova/ProximaNova-Regular.svg#Proxima Nova") format("svg");
+  font-weight: normal;
+  font-style: normal; }
+
+@media screen and (-webkit-min-device-pixel-ratio: 0) {
+  @font-face {
+    font-family: "Proxima Nova";
+    src: url("/fonts/proxima-nova/ProximaNova-Regular.svg#Proxima Nova") format("svg"); } }
+
+@font-face {
+  font-family: "Proxima Nova";
+  src: url("/fonts/proxima-nova/ProximaNova-Semibold.eot");
+  src: url("/fonts/proxima-nova/ProximaNova-Semibold.eot?#iefix") format("embedded-opentype"), url("/fonts/proxima-nova/ProximaNova-Semibold.woff") format("woff"), url("/fonts/proxima-nova/ProximaNova-Semibold.ttf") format("truetype"), url("/fonts/proxima-nova/ProximaNova-Semibold.svg#Proxima Nova") format("svg");
+  font-weight: 600;
+  font-style: normal; }
+
+@media screen and (-webkit-min-device-pixel-ratio: 0) {
+  @font-face {
+    font-family: "Proxima Nova";
+    src: url("/fonts/proxima-nova/ProximaNova-Semibold.svg#Proxima Nova") format("svg"); } }
+
+@font-face {
+  font-family: "Proxima Nova";
+  src: url("/fonts/proxima-nova/ProximaNova-Bold.eot");
+  src: url("/fonts/proxima-nova/ProximaNova-Bold.eot?#iefix") format("embedded-opentype"), url("/fonts/proxima-nova/ProximaNova-Bold.woff") format("woff"), url("/fonts/proxima-nova/ProximaNova-Bold.ttf") format("truetype"), url("/fonts/proxima-nova/ProximaNova-Bold.svg#Proxima Nova") format("svg");
+  font-weight: 700;
+  font-style: normal; }
+
+@media screen and (-webkit-min-device-pixel-ratio: 0) {
+  @font-face {
+    font-family: "Proxima Nova";
+    src: url("/fonts/proxima-nova/ProximaNova-Bold.svg#Proxima Nova") format("svg"); } }
+
 
 :root {
   --es-blue: rgb(50, 191, 219);
@@ -7,6 +67,11 @@
   --keyword: rgb(145, 229, 227);
   --employee-size: rgb(248, 209, 179);
   --job-title: rgb(250, 176, 208);
+}
+
+* {
+  /* Override semantic-defined fonts */
+  font-family: "Proxima Nova" !important;
 }
 
 .googleAd {
