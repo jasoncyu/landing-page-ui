@@ -15,7 +15,6 @@
     border: 0px none rgb(84, 84, 84);
     font: normal normal 400 normal 13px / 18px Roboto, arial, sans-serif;
     list-style: none outside none;
-    margin: 0px 0px 28px;
     outline: rgb(84, 84, 84) none 0px;
 }/*.LI_1*/
 
@@ -295,11 +294,11 @@
     color: rgb(0, 102, 33);
     cursor: pointer;
     display: inline-block;
-    height: 11px;
+    height: 14px;
+    width: 18px;
     text-align: left;
     text-decoration: none solid rgb(0, 102, 33);
     white-space: nowrap;
-    width: 13.3906px;
     column-rule-color: rgb(0, 102, 33);
     perspective-origin: 10.1875px 7px;
     transform-origin: 10.1875px 7px;

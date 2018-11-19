@@ -14,7 +14,7 @@ class GoogleAd extends React.Component<IGoogleAd> {
             </h3><br className={s.BR_6} />
             <div className={s.DIV_7}>
               <span className={s.SPAN_8}>Ad</span><cite className={s.CITE_9}>www.xfinity.com/Internet</cite>‎
-            </div><span className={s.SPAN_10}><span className={s.SPAN_11}><span className={s.SPAN_12}></span></span></span>
+            </div>
             <div className={s.DIV_13}>
             </div>
             <div className={s.DIV_14}>

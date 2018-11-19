@@ -76,12 +76,14 @@
 
 .googleAd {
   margin: auto;
+  padding: 10px 30px;
 }
 
 :global(.no-js #app) .titleHeader {
   display: block;
   text-align: center;
   color: black;
+  font-weight: 400;
 }
 
 :global(.no-js #app) .h1 {
@@ -89,6 +91,7 @@
   width: 100%;
   text-align: center;
   margin-bottom: 2rem;
+  font-weight: 400;
 }
 
 :global(.no-js #app) .googleAd {
