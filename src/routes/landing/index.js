@@ -43,13 +43,34 @@ function action() {
         'website': 'adarit.com',
         numContacts: 42,
       },
-      // {
-      //   'city': 'Foster City',
-      //   'name': 'Adarit',
-      //   'state': 'CA',
-      //   'website': 'adarit.com',
-      // 'numContacts': 42,
-      // },
+      {
+        'city': 'Foster City',
+        'name': 'Adarit',
+        'state': 'CA',
+        'website': 'adarit.com',
+        'numContacts': 42,
+      },
+      {
+        'city': 'Foster City',
+        'name': 'Adarit',
+        'state': 'CA',
+        'website': 'adarit.com',
+        'numContacts': 42,
+      },
+      {
+        'city': 'Foster City',
+        'name': 'Adarit',
+        'state': 'CA',
+        'website': 'adarit.com',
+        'numContacts': 42,
+      },
+      {
+        'city': 'Foster City',
+        'name': 'Adarit',
+        'state': 'CA',
+        'website': 'adarit.com',
+        'numContacts': 42,
+      },
     ],
     customerProfile: [
       {

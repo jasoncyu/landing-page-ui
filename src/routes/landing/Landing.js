@@ -27,28 +27,34 @@ class Landing extends React.Component {
 
   renderSupplyCompanies() {
     return (
-      <Card.Group>
+      <Card.Group centered className={s.supplyCompanyCards}>
         { this.props.supplyCompanies.map((c) => {
           return (
-            <Card>
+            <Card className={s.supplyCompanyCard}>
               <Card.Content>
-                <Card.Header>{c.name}</Card.Header>
+                <div className={s.supplyLogoCont}>
+                  <img className={s.supplyLogo} src="https://via.placeholder.com/200x150" />
+                </div>
+                <Card.Header textAlign="center">{c.name}</Card.Header>
                 <Card.Description>
-                  <p>
+                  <p className={s.supplyCompanyLocation}>
                     {c.city}, {c.state}
                   </p>
-                  <p>
+                  <p className={s.supplyCompanyWebsite}>
                     <a href={c.website} target="_external">
                       {c.website}
                     </a>
                   </p>
-                  {c.linkedin ?
-                    <p>
+                  {c.linkedin ? <p className={s.supplyCompanyLinkedin}>
                       <a href={c.linkedin} target="_external">
                         {c.linkedin}
                       </a>
                     </p> : null}
-                  <i className="fa fa-users" aria-hidden="true" />
+
+                  <p className={s.numContacts}>
+                    <i className="fa fa-users" aria-hidden="true" />
+                    <span className={s.numContactsNum}>{c.numContacts}</span>
+                  </p>
                 </Card.Description>
               </Card.Content>
             </Card>

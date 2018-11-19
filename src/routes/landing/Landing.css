@@ -14,7 +14,8 @@
 }
 
 :global(.no-js #app) .titleHeader {
-  margin: auto;
+  display: block;
+  text-align: center;
   color: black;
 }
 
@@ -39,6 +40,7 @@
   background: var(--dark-bg);
 }
 
+/* Properties */
 .propertiesCont {
   width: 50%;
   margin: auto;
@@ -91,4 +93,50 @@
 .propChip-employeeSize {
   composes: propChip;
   background: var(--employee-size);
+}
+
+/* Supply companies */
+:global(.no-js #app) .supplyCompanyCards {
+  width: 70%;
+  margin: auto;
+  /* max-width: 850px; */
+  /* margin: auto; */
+}
+
+:global(.no-js #app) .supplyCompanyCard {
+  border-top: 5px solid var(--es-blue);
+  width: 250px;
+  height: 250px;
+}
+
+.supplyLogoCont {
+}
+
+.supplyCompanyLocation {
+  text-align: center;
+}
+
+.supplyCompanyWebsite  {
+  text-align: center;
+}
+
+.supplyCompanyLinkedin {
+  text-align: center;
+}
+
+:global(.no-js #app) .supplyLogo {
+  display: block;
+  margin: auto;
+  width: 100px;
+  height: 100px;
+  object-fit: contain;
+}
+
+.numContacts {
+  text-align: center;
+}
+
+.numContactsNum {
+  display: inline-block;
+  margin-left: 5px;
 }
