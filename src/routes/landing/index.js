@@ -16,8 +16,7 @@ function action() {
       website: 'www.xfinity.com/Internet‎',
     },
     supplyCompanies: [
-      {
-        'city': 'Foster City',
+      { 'city': 'Foster City',
         'name': '247 Software',
         'state': 'CA',
         'website': '247software.com',
@@ -54,19 +53,76 @@ function action() {
     ],
     customerProfile: [
       {
-        text: 'Predictive Analytics',
+        text: 'Information Technology Services',
+        type: 'industry',
       },
       {
-        text: 'Predictive Analytics',
+        text: 'Financial Services',
+        type: 'industry',
       },
       {
-        text: 'Predictive Analytics',
+        text: 'it infrastructure',
+        type: 'keyword',
       },
       {
-        text: 'Predictive Analytics',
+        text: 'data transformation',
+        type: 'keyword',
       },
       {
-        text: 'Predictive Analytics',
+        text: 'data integration',
+        type: 'keyword',
+      },
+      {
+        text: 'master data management',
+        type: 'keyword',
+      },
+      {
+        text: 'data management',
+        type: 'keyword',
+      },
+      {
+        text: 'hybrid integration',
+        type: 'keyword',
+      },
+      {
+        text: 'data solutions',
+        type: 'keyword',
+      },
+      {
+        text: 'security and compliance',
+        type: 'keyword',
+      },
+      {
+        text: 'information and technology',
+        type: 'keyword',
+      },
+      {
+        text: 'financial services products',
+        type: 'keyword',
+      },
+      {
+        text: 'saas cloud',
+        type: 'keyword',
+      },
+      {
+        text: '100-200',
+        type: 'employeeSize'
+      },
+      {
+        text: '50-100',
+        type: 'employeeSize'
+      },
+      {
+        text: 'Chief Technology Officer',
+        type: 'jobTitle'
+      },
+      {
+        text: 'Head of Channel Sales',
+        type: 'jobTitle'
+      },
+      {
+        text: 'Chief Information Officer',
+        type: 'jobTitle'
       },
     ],
     demandCompanies: [],

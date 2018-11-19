@@ -9,29 +9,86 @@
   --job-title: rgb(250, 176, 208);
 }
 
-.h1 {
-  color: var(--es-blue);
+.googleAd {
   margin: auto;
 }
 
-.googleAd {
+:global(.no-js #app) .titleHeader {
+  margin: auto;
+  color: black;
+}
+
+:global(.no-js #app) .h1 {
+  color: var(--es-blue);
+  width: 100%;
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+:global(.no-js #app) .googleAd {
   margin: auto;
   border: 2px solid rgb(195, 195, 195);
   background: white;
 }
 
-.demandDashboard {
+:global(.no-js #app) .demandDashboard {
   background: var(--bg);
 }
 
-.darkRow {
+:global(.no-js #app) .darkRow {
   background: var(--dark-bg);
 }
 
-.propertiesRow {
-
+.propertiesCont {
+  width: 50%;
+  margin: auto;
 }
 
 .property {
+  margin-bottom: 20px;
+}
 
+.propertyTitle {
+  text-transform: uppercase;
+  margin-bottom: 10px;
+  display: block;
+  text-align: center;
+}
+
+.propChipCont {
+  width: 80%;
+  margin: auto;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+}
+
+.propChip {
+  font-size: 12px;
+  font-weight: 200;
+  display: inline-block;
+  border-radius: 40px;
+  padding: 5px 10px;
+  margin-right: 5px;
+  margin-bottom: 10px;
+}
+
+.propChip-industry {
+  composes: propChip;
+  background: var(--industry);
+}
+
+.propChip-jobTitle {
+  composes: propChip;
+  background: var(--job-title);
+}
+
+.propChip-keyword {
+  composes: propChip;
+  background: var(--keyword);
+}
+
+.propChip-employeeSize {
+  composes: propChip;
+  background: var(--employee-size);
 }
