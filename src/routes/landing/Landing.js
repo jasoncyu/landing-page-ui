@@ -5,6 +5,41 @@ import s from './Landing.css'
 
 
 class Landing extends React.Component {
+  renderSupplyCompanies() {
+    return (
+      <Card.Group>
+        {
+          this.props.supplyCompanies.map((c) => {
+            return <Card>
+                <Card.Content>
+                  <Card.Header>{c.name}</Card.Header>
+                  <Card.Description>
+                    <p>
+                      {c.city}, {c.state}
+                    </p>
+                    <p>
+                      <a href={c.website} target="_external">
+                        {c.website}
+                      </a>
+                    </p>
+                  {c.linkedin ?
+                    <p>
+                        <a href={c.linkedin} target="_external">
+                          {c.linkedin}
+                        </a>
+                      </p> : null}
+                    <p>
+
+                    </p>
+                    <i className="fa fa-users" aria-hidden="true" />
+                  </Card.Description>
+                </Card.Content>
+              </Card>;
+          })
+        }
+      </Card.Group>
+    )
+  }
   render() {
     return (
       <Grid className={s.demandDashboard}>
@@ -37,6 +72,7 @@ class Landing extends React.Component {
           <Header as="h1" className={s.h1}>
             We found XXX+ companies that are actively researching for the keyword XXX
           </Header>
+          {this.renderSupplyCompanies()}
         </Grid.Row>
       </Grid>
     )
