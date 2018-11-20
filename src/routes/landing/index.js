@@ -1,8 +1,8 @@
 import React from 'react';
 import Landing from './Landing';
 
-function action() {
-  const demandDashboardProps = {
+async function action({ fetch }) {
+  let demandDashboardProps = {
     customer: {
       'city': 'Foster City',
       'name': 'Qualys',
@@ -148,6 +148,142 @@ function action() {
     ],
     demandCompanies: [],
   }
+
+  const res = await fetch('https://jsonplaceholder.typicode.com/todos/1')
+  let json = await res.json()
+  json = {
+    "data": {
+      "contact_titles": [
+        "VP Marketing",
+        "Director Sales"
+      ],
+      "demand_competitors": {
+        "count": 2,
+        "websites": [
+          "optimove.com",
+          "redpointglobal.com"
+        ]
+      },
+      "demand_keyword": "predictive analytics",
+      "demand_search_snippet": "",
+      "demand_search_url": "",
+      "demand_website": "c3.ai",
+      "employee_size_ranges": [
+        "100-200",
+        "50-100"
+      ],
+      "industries": [
+        "computer software",
+        "information technology"
+      ],
+      "keywords": [
+        "iot software",
+        "machine learning",
+        "data scientist"
+      ],
+      "supply_companies_count": 81,
+      "top_supply_companies": [
+        {
+          "city": "Garland",
+          "country": "United States",
+          "domain": "bearcom.com",
+          "id": 112514882,
+          "linkedinUrl": "linkedin.com/company/bearcom",
+          "name": "BearCom",
+          "state": "Texas"
+        },
+        {
+          "city": "Milpitas",
+          "country": "United States",
+          "domain": "linear.com",
+          "id": 136480445,
+          "linkedinUrl": "linkedin.com/company/linear-technology",
+          "name": "Linear Technology LLC",
+          "state": "California"
+        },
+        {
+          "city": "La Mirada",
+          "country": "United States",
+          "domain": "livingspaces.com",
+          "id": 151948687,
+          "linkedinUrl": "linkedin.com/company/living-spaces-furniture",
+          "name": "Living Spaces Furniture LLC",
+          "state": "California"
+        },
+        {
+          "city": "Ipswich",
+          "country": "United States",
+          "domain": "neb.com",
+          "id": 149366259,
+          "linkedinUrl": "linkedin.com/company/26482",
+          "name": "New England Biolabs Inc",
+          "state": "Massachusetts"
+        },
+        {
+          "city": "Costa Mesa",
+          "country": "United States",
+          "domain": "vans.com",
+          "id": 155782682,
+          "linkedinUrl": "linkedin.com/company/vans",
+          "name": "Vans",
+          "state": "California"
+        }
+      ],
+    }
+  }
+  console.log("json: ", json)
+  const props = {
+    customerProfile: [],
+    supplyCompanies: [],
+    demandCompetitors: [],
+  }
+  json.data.contact_titles.forEach((title) => {
+    props.customerProfile.push({
+      text: title,
+      type: 'jobTitle'
+    })
+  })
+  json.data.keywords.forEach((kw) => {
+    props.customerProfile.push({
+      text: kw,
+      type: 'keyword'
+    })
+  })
+  json.data.industries.forEach((industry) => {
+    props.customerProfile.push({
+      text: industry,
+      type: 'industry'
+    })
+  })
+  json.data.employee_size_ranges.forEach((esr) => {
+    props.customerProfile.push({
+      text: esr,
+      type: 'employeeSize'
+    })
+  })
+
+  json.data.demand_competitors.websites.forEach((w) => {
+    props.demandCompetitors.push({
+      website: w
+    })
+  })
+  props.demandCompetitorsCount = json.data.demand_competitors.count
+  props.demandKeyword = json.data.demand_keyword
+  props.demandSearchSnippet = json.data.demand_search_snippet
+  props.demandSearchUrl = json.data.demandSearchUrl
+  props.supplyCompaniesCount = json.data.supply_companies_count
+  json.data.top_supply_companies.forEach((c) => {
+    props.supplyCompanies.push({
+      id: c.id,
+      website: c.domain,
+      linkedin: c.linkedinUrl,
+      city: c.city,
+      name: c.name,
+      state: c.state,
+    })
+  })
+
+  demandDashboardProps = Object.assign(demandDashboardProps, props)
 
   return {
     title: 'EverString',

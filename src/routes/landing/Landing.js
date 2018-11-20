@@ -8,11 +8,13 @@ import _ from 'lodash'
 
 class Landing extends React.Component {
   constructor(props) {
+    console.log("props: ", props)
     super(props)
     this.state = {
       properties: []
     }
   }
+
   componentDidMount() {
     const properties = {}
     this.props.customerProfile.forEach((property) => {
@@ -29,13 +31,14 @@ class Landing extends React.Component {
     return (
       <Card.Group centered className={s.supplyCompanyCards}>
         { this.props.supplyCompanies.map((c) => {
+          console.log("c: ", c)
           return (
             <Card className={s.supplyCompanyCard}>
               <Card.Content>
                 <div className={s.supplyLogoCont}>
                   <img className={s.supplyLogo} src="https://via.placeholder.com/200x150" />
                 </div>
-                <Card.Header textAlign="center">{c.name}</Card.Header>
+                <Card.Header className={s.companyName} textAlign="center">{c.name}</Card.Header>
                 <Card.Description>
                   <p className={s.supplyCompanyLocation}>
                     {c.city}, {c.state}
@@ -46,15 +49,18 @@ class Landing extends React.Component {
                     </a>
                   </p>
                   {c.linkedin ? <p className={s.supplyCompanyLinkedin}>
+
                       <a href={c.linkedin} target="_external">
-                        {c.linkedin}
+                        <i className="fab fa-linkedin"></i>
                       </a>
                     </p> : null}
 
-                  <p className={s.numContacts}>
-                    <i className="fa fa-users" aria-hidden="true" />
-                    <span className={s.numContactsNum}>{c.numContacts}</span>
-                  </p>
+                  {c.numContacts ?
+                   <p className={s.numContacts}>
+                     <i className="fa fa-users" aria-hidden="true" />
+                     <span className={s.numContactsNum}>{c.numContacts}</span>
+                   </p>
+                   : null}
                 </Card.Description>
               </Card.Content>
             </Card>

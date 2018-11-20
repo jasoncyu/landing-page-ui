@@ -74,6 +74,16 @@
   font-family: "Proxima Nova" !important;
 }
 
+:global .fa {
+  /* Override the Proxima Nova declaration above */
+  font-family: "Font Awesome 5 Free" !important;
+}
+
+:global .fab {
+  /* Override the Proxima Nova declaration above */
+  font-family: "Font Awesome 5 Brands" !important;
+}
+
 .googleAd {
   margin: auto;
   padding: 10px 30px;
@@ -175,6 +185,13 @@
   border-top: 5px solid var(--es-blue);
   width: 250px;
   height: 250px;
+}
+
+:global(.no-js #app) .companyName {
+  /* Company names can be very long. */
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
 }
 
 .supplyLogoCont {
