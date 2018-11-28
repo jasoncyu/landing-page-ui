@@ -1,5 +1,5 @@
 import React from 'react';
-import Landing from './Landing';
+import LandingV2 from './LandingV2';
 
 async function action({ fetch }) {
   let demandDashboardProps = {
@@ -288,7 +288,7 @@ async function action({ fetch }) {
   return {
     title: 'EverString',
     chunks: ['landing'],
-    component: <Landing {...demandDashboardProps}/>,
+    component: <LandingV2 {...demandDashboardProps}/>,
   };
 }
 
