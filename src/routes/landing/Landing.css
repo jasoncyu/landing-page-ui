@@ -84,6 +84,22 @@
   font-family: "Font Awesome 5 Brands" !important;
 }
 
+.navBar {
+  height: 42px;
+  background: var(--es-blue);
+}
+
+.helpText {
+  color: white;
+}
+
+.whiteLink {
+  color: white;
+  &:hover {
+    color: red;
+  }
+}
+
 .googleAd {
   margin: auto;
   padding: 10px 30px;
@@ -104,6 +120,12 @@
   font-weight: 400;
 }
 
+:global(.no-js #app) .longH1 {
+  width: 50%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
 :global(.no-js #app) .googleAd {
   margin: auto;
   border: 2px solid rgb(195, 195, 195);
@@ -114,7 +136,12 @@
   background: var(--bg);
 }
 
+:global(.no-js #app) .row {
+  padding: 4rem 0;
+}
+
 :global(.no-js #app) .darkRow {
+  padding: 4rem 0;
   background: var(--dark-bg);
 }
 
@@ -224,4 +251,9 @@
 .numContactsNum {
   display: inline-block;
   margin-left: 5px;
+}
+
+.aiMagic {
+  display: block;
+  margin: auto;
 }

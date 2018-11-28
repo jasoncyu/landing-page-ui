@@ -120,45 +120,59 @@ class Landing extends React.Component {
 
   render() {
     return (
-      <Grid className={s.demandDashboard}>
-        <Grid.Row>
-          <Grid.Column width={16}>
-            <Header as="h1" className={s.titleHeader}>
-              EverString Demand Dashboard
-            </Header>
-          </Grid.Column>
-          <Grid.Column width={16}>
-            <Header as="h1" className={s.titleHeader}>
-              Discover companies actively researching your solution right now
-            </Header>
-          </Grid.Column>
-        </Grid.Row>
-        <Grid.Row className={`${s.darkRow}`}>
-          <Header as="h1" className={s.h1}>
-            You and {this.props.supplyCompanies.length} other companies
-            are running google ads that look like this
-          </Header>
-          <GoogleAd className={s.googleAd} />
-        </Grid.Row>
-        <Grid.Row>
-          <Header as="h1" className={s.h1}>
-            Your ideal Customer Profile
-          </Header>
-          {this.renderCustomerProfile()}
-        </Grid.Row>
-        <Grid.Row className={`${s.darkRow}`}>
-          <Header as="h1" className={s.h1}>
-            Our Process
-          </Header>
+      <div className={s.demandDashboard}>
+        <Grid>
+          <div className={s.navBar}>
+            <div className="logoCont">
+              <img src="public/logo_white.png"/>
+              <div className="logoText">
+                EverString
+              </div>
+            </div>
 
-        </Grid.Row>
-        <Grid.Row>
-          <Header as="h1" className={s.h1}>
-            We found XXX+ companies that are actively researching for the keyword XXX
-          </Header>
-          {this.renderSupplyCompanies()}
-        </Grid.Row>
-      </Grid>
+            <div className={s.helpText}>
+              learn more at <a className={s.whiteLink} href="https://www.everstring.com">everstring.com</a>
+            </div>
+          </div>
+          <Grid.Row className={s.row}>
+            <Grid.Column width={16}>
+              <Header as="h1" className={s.titleHeader}>
+                EverString Demand Dashboard
+              </Header>
+            </Grid.Column>
+            <Grid.Column width={16}>
+              <Header as="h1" className={s.titleHeader}>
+                Discover companies actively researching your solution right now
+              </Header>
+            </Grid.Column>
+          </Grid.Row>
+          <Grid.Row className={`${s.darkRow}`}>
+            <Header as="h1" className={s.h1}>
+              You and {this.props.supplyCompanies.length} other companies
+              are running google ads that look like this
+            </Header>
+            <GoogleAd className={s.googleAd} />
+          </Grid.Row>
+          <Grid.Row className={s.row}>
+            <Header as="h1" className={s.h1}>
+              Your ideal Customer Profile
+            </Header>
+            {this.renderCustomerProfile()}
+          </Grid.Row>
+          <Grid.Row className={`${s.darkRow}`}>
+            <Header as="h1" className={s.h1}>
+              Our Process
+            </Header>
+            <img className={s.aiMagic} src="/images/ai_magic.png"/>
+          </Grid.Row>
+          <Grid.Row className={s.row}>
+            <Header as="h1" className={`${s.h1} ${s.longH1}`}>
+              We found XXX+ companies that are actively researching for the keyword XXX
+            </Header>
+            {this.renderSupplyCompanies()}
+          </Grid.Row>
+        </Grid>
+      </div>
     )
   }
 }
