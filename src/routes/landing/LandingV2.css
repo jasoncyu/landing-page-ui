@@ -85,7 +85,7 @@
   font-family: "Font Awesome 5 Brands" !important;
 }
 
-.content {
+:global(.no-js #app) .content {
   padding: 50px 30px;
 }
 
@@ -120,29 +120,41 @@
 
 }
 
-.firmo {
-
+:global(.no-js #app) .firmo {
+  padding: 0;
+  margin-top: 1.5rem;
+  &:first-child {
+    margin-top: 0.7rem;
+  }
 }
 
 :global(.no-js #app) .cell {
   background: white;
   width: 28%;
   height: 319px;
-  padding-left: 0;
-  padding-right: 0;
+
+  padding: 2rem;
   margin-left: 1rem;
   margin-right: 1rem;
+
+  overflow: hidden;
+
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05000000074505806)
 }
 
 .firmoHeader {
   color: var(--header-red);
   font-size: 14px;
   text-transform: uppercase;
+  font-weight: 600;
+  letter-spacing: 1.75px;
+  line-height: 17px;
+  text-align: left;
 }
 
 .firmoVal {
   font-size: 18px;
-  font-weight: 800
+  font-weight: 700
 }
 .demandCompaniesRow {
 

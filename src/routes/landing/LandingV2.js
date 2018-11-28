@@ -19,14 +19,14 @@ class LandingV2 extends React.Component {
 
     return [c.revenue, c.employeeSize, c.industry, c.numContacts, c.alexaRank].map((val, i) => {
       return (
-        <div className={s.firmo}>
-          <h5 className={s.firmoHeader}>
+        <Grid.Column width={16} className={s.firmo}>
+          <div className={s.firmoHeader}>
             {headers[i]}
-          </h5>
+          </div>
           <span className={s.firmoVal}>
             {val}
           </span>
-        </div>
+        </Grid.Column>
       )
     })
   }
@@ -58,7 +58,9 @@ class LandingV2 extends React.Component {
               Logo
             </Grid.Column>
             <Grid.Column className={s.cell}>
-              {this.renderFirmos()}
+              <Grid columns="equal">
+                {this.renderFirmos()}
+              </Grid>
             </Grid.Column>
           </Grid.Row>
           <Grid.Row className={s.demandCompaniesRow}>
