@@ -71,7 +71,7 @@ class LandingV2 extends React.Component {
 
         <Grid columns="equal" className={s.content}>
           <Grid.Row className={s.titleRow}>
-            <h1>
+            <h1 className={s.custName}>
               {this.props.customer.name}
             </h1>
             <a href={this.props.customer.website}>
