@@ -13,6 +13,23 @@ class LandingV2 extends React.Component {
     }
   }
 
+  renderKeywordsRow() {
+    const keywords = this.props.keywords.map((kw) => {
+      return <span className={s.keyword}>{kw},</span>
+    })
+
+    return (
+      <Grid.Row className={`${s.cell} ${s.keywordsRow}`}>
+        <div className={` ${s.keywordsCont} ${s.redHeader}`}>
+          Keywords
+        </div>
+        <div className={` ${s.keywordsCont}`}>
+          {keywords}
+        </div>
+      </Grid.Row>
+    )
+  }
+
   renderCompanies() {
     return this.props.similarCompanies.map((c) => {
       return (
@@ -84,6 +101,9 @@ class LandingV2 extends React.Component {
               {this.renderCompanies()}
             </div>
           </Grid.Row>
+
+          {this.renderKeywordsRow()}
+
         </Grid>
       </div>
     )
