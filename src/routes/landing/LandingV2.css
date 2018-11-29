@@ -68,6 +68,7 @@
   --employee-size: rgb(248, 209, 179);
   --job-title: rgb(250, 176, 208);
   --header-red: #ff565c;
+  --row-spacing: 3rem;
 }
 
 * {
@@ -117,15 +118,17 @@
 }
 
 .firmosRow {
+}
 
+.firmosCont {
+  display: flex;
+  flex-flow: column wrap;
+  justify-content: space-between;
+  height: 100%;
 }
 
 :global(.no-js #app) .firmo {
   padding: 0;
-  margin-top: 1.5rem;
-  &:first-child {
-    margin-top: 0.7rem;
-  }
 }
 
 :global(.no-js #app) .cell {
@@ -137,25 +140,66 @@
   margin-left: 1rem;
   margin-right: 1rem;
 
+  &:first-child {
+    margin-left: 0;
+  }
+  &:last-child {
+    margin-right: 0;
+  }
+
   overflow: hidden;
 
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05000000074505806)
 }
 
-.firmoHeader {
+.desc {
+  font-weight: 300;
+}
+
+.redHeader {
   color: var(--header-red);
   font-size: 14px;
   text-transform: uppercase;
   font-weight: 600;
   letter-spacing: 1.75px;
-  line-height: 17px;
   text-align: left;
+  margin-bottom: .5rem;
 }
 
 .firmoVal {
   font-size: 18px;
   font-weight: 700
 }
-.demandCompaniesRow {
 
+:global(.no-js #app) .companiesRow {
+  margin-top: var(--row-spacing);
+  background: white;
+  padding: 2rem;
+}
+
+.companiesCont {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+  width: 100%;
+}
+
+.simCompHeader {
+  margin-bottom: 3rem;
+}
+
+.simComp {
+  width: 20%;
+}
+
+.logo {
+  display: block;
+  /* margin: auto; */
+  object-fit: cover;
+  width: 80%;
+}
+
+.simCompName {
+  display: block;
+  margin-top: 1rem;
 }

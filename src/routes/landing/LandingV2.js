@@ -13,6 +13,17 @@ class LandingV2 extends React.Component {
     }
   }
 
+  renderCompanies() {
+    return this.props.similarCompanies.map((c) => {
+      return (
+        <div className={s.simComp}>
+          <img className={s.logo} src={c.logoUrl} />
+          <span className={s.simCompName}>{c.name}</span>
+        </div>
+      )
+    })
+  }
+
   renderFirmos() {
     const c = this.props.customer
     const headers = ['Revenue', 'Employees', 'Industry', 'Contacts', 'Alexa Rank']
@@ -20,7 +31,7 @@ class LandingV2 extends React.Component {
     return [c.revenue, c.employeeSize, c.industry, c.numContacts, c.alexaRank].map((val, i) => {
       return (
         <Grid.Column width={16} className={s.firmo}>
-          <div className={s.firmoHeader}>
+          <div className={s.redHeader}>
             {headers[i]}
           </div>
           <span className={s.firmoVal}>
@@ -50,20 +61,28 @@ class LandingV2 extends React.Component {
               {this.props.customer.website}
             </a>
           </Grid.Row>
+
           <Grid.Row className={s.firmosRow}>
-            <Grid.Column className={s.cell}>
+            <Grid.Column className={`${s.cell} ${s.desc}`}>
               {this.props.customer.description}
             </Grid.Column>
             <Grid.Column className={s.cell}>
               Logo
             </Grid.Column>
             <Grid.Column className={s.cell}>
-              <Grid columns="equal">
+              <div className={s.firmosCont}>
                 {this.renderFirmos()}
-              </Grid>
+              </div>
             </Grid.Column>
           </Grid.Row>
-          <Grid.Row className={s.demandCompaniesRow}>
+
+          <Grid.Row className={s.companiesRow}>
+            <div className={`${s.redHeader} ${s.simCompHeader}`}>
+              Similar Companies
+            </div>
+            <div className={s.companiesCont}>
+              {this.renderCompanies()}
+            </div>
           </Grid.Row>
         </Grid>
       </div>

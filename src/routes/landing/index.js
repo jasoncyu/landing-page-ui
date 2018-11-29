@@ -21,12 +21,13 @@ async function action({ fetch }) {
       'title': "Xfinity® High Speed Internet | Limited Offer - $29.99/mo/1yr | xfinity.com‎",
       website: 'www.xfinity.com/Internet‎',
     },
-    supplyCompanies: [
+    similarCompanies: [
       { 'city': 'Foster City',
         'name': '247 Software',
         'state': 'CA',
         'website': '247software.com',
         'numContacts': 42,
+        logoUrl: 'https://via.placeholder.com/200x100',
       },
       {
         'city': 'Foster City',
@@ -34,6 +35,7 @@ async function action({ fetch }) {
         'state': 'CA',
         'website': 'adarit.com',
         'numContacts': 42,
+        logoUrl: 'https://via.placeholder.com/200x100',
       },
       {
         'city': 'Foster City',
@@ -41,6 +43,7 @@ async function action({ fetch }) {
         'state': 'CA',
         'website': 'adarit.com',
         'numContacts': 42,
+        logoUrl: 'https://via.placeholder.com/200x100',
       },
       {
         'city': 'Foster City',
@@ -48,6 +51,7 @@ async function action({ fetch }) {
         'state': 'CA',
         'website': 'adarit.com',
         numContacts: 42,
+        logoUrl: 'https://via.placeholder.com/200x100',
       },
       {
         'city': 'Foster City',
@@ -55,27 +59,7 @@ async function action({ fetch }) {
         'state': 'CA',
         'website': 'adarit.com',
         'numContacts': 42,
-      },
-      {
-        'city': 'Foster City',
-        'name': 'Adarit',
-        'state': 'CA',
-        'website': 'adarit.com',
-        'numContacts': 42,
-      },
-      {
-        'city': 'Foster City',
-        'name': 'Adarit',
-        'state': 'CA',
-        'website': 'adarit.com',
-        'numContacts': 42,
-      },
-      {
-        'city': 'Foster City',
-        'name': 'Adarit',
-        'state': 'CA',
-        'website': 'adarit.com',
-        'numContacts': 42,
+        logoUrl: 'https://via.placeholder.com/200x100',
       },
     ],
     customerProfile: [
