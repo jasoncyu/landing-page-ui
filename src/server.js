@@ -122,6 +122,7 @@ app.use(
 // Register server-side rendering middleware
 // -----------------------------------------------------------------------------
 app.get('*', async (req, res, next) => {
+  console.log('server code reached')
   try {
     const css = new Set();
 

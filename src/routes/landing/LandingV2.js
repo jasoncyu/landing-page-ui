@@ -13,6 +13,35 @@ class LandingV2 extends React.Component {
     }
   }
 
+  renderNewsRow() {
+    const newsElem = this.props.news.map((newsItem) => {
+      return (
+        <div className={s.newsWrapper}>
+          <div className={s.newsHeadline}>
+            {newsItem.title}
+          </div>
+          <div className={s.newsContent}>
+            {newsItem.content}
+          </div>
+          <div className={s.newsDate}>
+            {newsItem.date}
+          </div>
+        </div>
+      )
+    })
+
+    return (
+      <Grid.Row className={`${s.cell} ${s.newsRow}`}>
+        <div className={`${s.newsHeader} ${s.redHeader}`}>
+          News
+        </div>
+        <div className={s.newsItemsWrapper}>
+          {newsElem}
+        </div>
+      </Grid.Row>
+    )
+  }
+
   renderKeywordsRow() {
     const keywords = this.props.keywords.map((kw) => {
       return <span className={s.keyword}>{kw},</span>
@@ -63,9 +92,8 @@ class LandingV2 extends React.Component {
     return (
       <div className={s.landingV2}>
         <div className={s.navBar}>
-          <div className={s.logoCont}>
-            <img src="/logo_molecule.png"/>
-            <img src="/logo.svg"/>
+          <div>
+            <img src="/ESlogo2x.png" className={s.headerLogo}/>
           </div>
         </div>
 
@@ -77,14 +105,13 @@ class LandingV2 extends React.Component {
             <a href={this.props.customer.website}>
               {this.props.customer.website}
             </a>
+
+            <div className={s.divider}/>
           </Grid.Row>
 
           <Grid.Row className={s.firmosRow}>
             <Grid.Column className={`${s.cell} ${s.desc}`}>
               {this.props.customer.description}
-            </Grid.Column>
-            <Grid.Column className={s.cell}>
-              Logo
             </Grid.Column>
             <Grid.Column className={s.cell}>
               <div className={s.firmosCont}>
@@ -104,6 +131,7 @@ class LandingV2 extends React.Component {
 
           {this.renderKeywordsRow()}
 
+          {this.renderNewsRow()}
         </Grid>
       </div>
     )

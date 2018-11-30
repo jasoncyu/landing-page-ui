@@ -1,7 +1,10 @@
 import React from 'react';
 import LandingV2 from './LandingV2';
 
-async function action({ fetch }) {
+async function action(params) {
+  const id = decodeURIComponent(params.path.replace('/', ''))
+
+  const { fetch } = params
   let demandDashboardProps = {
     customer: {
       'city': 'Foster City',
@@ -220,6 +223,23 @@ async function action({ fetch }) {
           "state": "California"
         }
       ],
+      news: [
+        {
+          title: 'News Headline',
+          content: 'Lorem ipsum dolor sit amet, consectetuer adipiscing elit.  Donec hendrerit tempor tellus.  Donec pretium posuere tellus.  Proin quam nisl, tincidunt et, mattis eget, convallis nec, purus.  Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.  Nulla posuere.  Donec vitae dolor.  Nullam tristique diam non turpis.  Cras placerat accumsan nulla.  Nullam rutrum.  Nam vestibulum accumsan nisl. Lorem ipsum dolor sit amet, consectetuer adipiscing elit.  Donec hendrerit tempor tellus.  Donec pretium posuere tellus.  Proin quam nisl, tincidunt et, mattis eget, convallis nec, purus.  Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.  Nulla posuere.  Donec vitae dolor.  Nullam tristique diam non turpis.  Cras placerat accumsan nulla.  Nullam rutrum.  Nam vestibulum accumsan nisl. ',
+          date: '11/24/18'
+        },
+        {
+          title: 'News Headline',
+          content: 'Lorem ipsum dolor sit amet, consectetuer adipiscing elit.  Donec hendrerit tempor tellus.  Donec pretium posuere tellus.  Proin quam nisl, tincidunt et, mattis eget, convallis nec, purus.  Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.  Nulla posuere.  Donec vitae dolor.  Nullam tristique diam non turpis.  Cras placerat accumsan nulla.  Nullam rutrum.  Nam vestibulum accumsan nisl. Lorem ipsum dolor sit amet, consectetuer adipiscing elit.  Donec hendrerit tempor tellus.  Donec pretium posuere tellus.  Proin quam nisl, tincidunt et, mattis eget, convallis nec, purus.  Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.  Nulla posuere.  Donec vitae dolor.  Nullam tristique diam non turpis.  Cras placerat accumsan nulla.  Nullam rutrum.  Nam vestibulum accumsan nisl. ',
+          date: '11/24/18'
+        },
+        {
+          title: 'News Headline',
+          content: 'Lorem ipsum dolor sit amet, consectetuer adipiscing elit.  Donec hendrerit tempor tellus.  Donec pretium posuere tellus.  Proin quam nisl, tincidunt et, mattis eget, convallis nec, purus.  Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.  Nulla posuere.  Donec vitae dolor.  Nullam tristique diam non turpis.  Cras placerat accumsan nulla.  Nullam rutrum.  Nam vestibulum accumsan nisl. Lorem ipsum dolor sit amet, consectetuer adipiscing elit.  Donec hendrerit tempor tellus.  Donec pretium posuere tellus.  Proin quam nisl, tincidunt et, mattis eget, convallis nec, purus.  Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.  Nulla posuere.  Donec vitae dolor.  Nullam tristique diam non turpis.  Cras placerat accumsan nulla.  Nullam rutrum.  Nam vestibulum accumsan nisl. ',
+          date: '11/24/18'
+        },
+      ]
     }
   }
   console.log("json: ", json)
@@ -263,6 +283,7 @@ async function action({ fetch }) {
   props.demandSearchSnippet = json.data.demand_search_snippet
   props.demandSearchUrl = json.data.demandSearchUrl
   props.supplyCompaniesCount = json.data.supply_companies_count
+  props.news = json.data.news
   json.data.top_supply_companies.forEach((c) => {
     props.supplyCompanies.push({
       id: c.id,
@@ -273,11 +294,12 @@ async function action({ fetch }) {
       state: c.state,
     })
   })
+  props.pageID = id
 
   demandDashboardProps = Object.assign(demandDashboardProps, props)
 
   return {
-    title: 'EverString',
+    title: demandDashboardProps.customer.name,
     chunks: ['landing'],
     component: <LandingV2 {...demandDashboardProps}/>,
   };

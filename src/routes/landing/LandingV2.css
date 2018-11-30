@@ -69,6 +69,8 @@
   --job-title: rgb(250, 176, 208);
   --header-red: #ff565c;
   --row-spacing: 3rem;
+
+  --page-horiz-padding: 70px;
 }
 
 * {
@@ -87,7 +89,8 @@
 }
 
 :global(.no-js #app) .content {
-  padding: 50px 30px;
+  /* TODO: use arithmetic. 84px = 70px of horizontal padding + 14px of margin that semantic adds */
+  padding: 50px 84px;
 }
 
 .row {
@@ -103,14 +106,31 @@
   background: var(--bg);
 }
 
-.logoCont {
+.headerLogo {
+  height: 2rem;
+  object-fit: cover;
 
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
 }
 
 :global(.no-js #app) .navBar {
-  height: 9rem;
-  padding-left: 2rem;
-  padding-right: 2rem;
+  position: relative;
+
+  height: 6rem;
+  padding-left: var(--page-horiz-padding);
+  padding-right: var(--page-horiz-padding);
+
+  background: white;
+}
+
+.divider {
+  margin-top: 1rem;
+  flex-basis: 100%;
+
+  width: 100%;
+  border-bottom: 2px solid rgb(232, 233, 234);
 }
 
 .titleRow {
@@ -237,4 +257,48 @@ a {
   text-align: left;
   display: inline-block;
   margin-right: .2rem;
+}
+
+.newsRow {
+  background: white;
+  composes: row;
+  margin-top: var(--row-spacing);
+  margin-left: 0 !important;
+  margin-right: 1rem !important;
+  /* height: 550px !important; */
+  height: initial !important;
+}
+
+.newsItemsWrapper {
+
+}
+
+.newsWrapper {
+  margin-top: 2rem;
+  &:first-of-type {
+    margin-top: 0;
+  }
+}
+
+.newsHeadline {
+  color: #51BFDD;
+  font-family: ProximaNova;
+  font-size: 14px;
+  font-weight: 600;
+  letter-spacing: 1.75px;
+  line-height: 23px;
+}
+
+.newsContent {
+  color: black;
+  margin-top: .2rem;
+}
+
+.newsHeader {
+  margin-bottom: 2rem;
+}
+
+.newsDate {
+  margin-top: 0;
+  color: rgb(164, 164, 164);
 }
