@@ -14,14 +14,14 @@ class LandingV2 extends React.Component {
   }
 
   renderNewsRow() {
-    const newsElem = this.props.news.map((newsItem) => {
+    const newsElem = this.props.news.slice(0, 3).map((newsItem) => {
       return (
         <div className={s.newsWrapper}>
           <div className={s.newsHeadline}>
             {newsItem.title}
           </div>
           <div className={s.newsContent}>
-            {newsItem.content}
+            {newsItem.description}
           </div>
           <div className={s.newsDate}>
             {newsItem.date}
@@ -43,6 +43,8 @@ class LandingV2 extends React.Component {
   }
 
   renderKeywordsRow() {
+    console.log('this.props:', this.props)
+
     const keywords = this.props.keywords.map((kw) => {
       return <span className={s.keyword}>{kw},</span>
     })
@@ -71,10 +73,10 @@ class LandingV2 extends React.Component {
   }
 
   renderFirmos() {
-    const c = this.props.customer
+    const c = this.props
     const headers = ['Revenue', 'Employees', 'Industry', 'Contacts', 'Alexa Rank']
 
-    return [c.revenue, c.employeeSize, c.industry, c.numContacts, c.alexaRank].map((val, i) => {
+    return [c.revenueRange, c.employeeSize, c.industry, c.numContacts, c.alexaRank].map((val, i) => {
       return (
         <Grid.Column width={16} className={s.firmo}>
           <div className={s.redHeader}>
@@ -100,10 +102,10 @@ class LandingV2 extends React.Component {
         <Grid columns="equal" className={s.content}>
           <Grid.Row className={s.titleRow}>
             <h1 className={s.custName}>
-              {this.props.customer.name}
+              {this.props.name}
             </h1>
-            <a href={this.props.customer.website}>
-              {this.props.customer.website}
+            <a href={this.props.website}>
+              {this.props.website}
             </a>
 
             <div className={s.divider}/>
@@ -111,7 +113,7 @@ class LandingV2 extends React.Component {
 
           <Grid.Row className={s.firmosRow}>
             <Grid.Column className={`${s.cell} ${s.desc}`}>
-              {this.props.customer.description}
+              {this.props.description}
             </Grid.Column>
             <Grid.Column className={s.cell}>
               <div className={s.firmosCont}>
