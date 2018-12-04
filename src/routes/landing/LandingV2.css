@@ -243,6 +243,7 @@ a {
 .keywordsRow {
   margin-top: var(--row-spacing);
   margin-left: 0 !important;
+  height: initial !important;
 }
 
 .keywordsCont {
