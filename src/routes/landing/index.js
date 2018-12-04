@@ -1,14 +1,17 @@
 import React from 'react';
+import _ from 'lodash'
 import LandingV2 from './LandingV2';
 
 async function action(params) {
-  const id = decodeURIComponent(params.path.replace('/', ''))
+  console.log("params: ", params)
+  const id = params.params.id
 
   const { fetch } = params
   let demandDashboardProps = {}
 
   const url = 'http://10.50.0.136:9005/v1/companies/demand_company';
 
+  console.log("id: ", id)
   const res = await fetch(url, {
     method: 'POST',
     credentials: 'include',
@@ -18,6 +21,9 @@ async function action(params) {
     },
     body: JSON.stringify({ website: id })
   })
+  if (!res.ok) {
+
+  }
   let json = await res.json()
 
   console.log("json: ", json)
@@ -25,6 +31,12 @@ async function action(params) {
     customerProfile: [],
     supplyCompanies: [],
     demandCompetitors: [],
+  }
+
+  console.log("json: ", json)
+  if (json.message || _.isEmpty(json.data)) {
+    console.log('redirect 404');
+    return { redirect: '/404' };
   }
 
   props.name = json.data.name
@@ -45,8 +57,6 @@ async function action(params) {
   props.pageID = id
 
   demandDashboardProps = Object.assign(demandDashboardProps, props)
-  console.log('demandDashboardProps:', demandDashboardProps)
-
 
   return {
     title: demandDashboardProps.name,

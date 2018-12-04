@@ -17,7 +17,7 @@ const routes = {
   children: [
     {
       // TODO: Move this to root path at least for prod
-      path: '/landing/:id',
+      path: '/company/:id',
       load: () => import(/* webpackChunkName: 'landing' */ './landing'),
     },
     // {
@@ -53,7 +53,7 @@ const routes = {
     {
       path: '(.*)',
       // load: () => import(/* webpackChunkName: 'not-found' */ './not-found'),
-      load: () => import(/* webpackChunkName: 'not-found' */ './landing'),
+      load: () => import(/* webpackChunkName: 'not-found' */ './not-found'),
     },
   ],
 
