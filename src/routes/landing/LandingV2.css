@@ -303,3 +303,34 @@ a {
   margin-top: 0;
   color: rgb(164, 164, 164);
 }
+
+.ctaImg {
+  object-fit: cover;
+}
+
+.ctaRow {
+  margin-top: var(--row-spacing);
+  margin-left: 0 !important;
+  margin-right: 1rem !important;
+}
+
+.ctaCell {
+  position: relative;
+}
+
+.blurred {
+}
+
+.blurredText {
+  color: transparent;
+  text-shadow: rgba(0, 0, 0, 0.5) 0px 0px 20px;
+}
+
+.button {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+
+  text-transform: uppercase;
+}

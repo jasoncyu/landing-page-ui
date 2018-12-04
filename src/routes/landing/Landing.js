@@ -7,6 +7,9 @@ import _ from 'lodash'
 
 
 class Landing extends React.Component {
+  static defaultProps = {
+    news: [],
+  }
   constructor(props) {
     console.log("props: ", props)
     super(props)
