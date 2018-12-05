@@ -61,7 +61,7 @@ class LandingV2 extends React.Component {
               <Button primary className={s.button}>
                 Register To See
               </Button>
-            </a>>
+            </a>
           </div>
         </Grid.Column>
       )
